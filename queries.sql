@@ -25,4 +25,5 @@ BEGIN;
 
 COMMIT;
 
-SELECT COUNT(*) FROM animals
+SELECT COUNT(*) FROM animals;
+SELECT * FROM animals WHERE escape_attempts = 0;
