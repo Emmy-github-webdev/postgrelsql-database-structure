@@ -24,3 +24,5 @@ WHERE name NOT LIKE '%mon';
 BEGIN;
 
 COMMIT;
+
+SELECT COUNT(*) FROM animals
