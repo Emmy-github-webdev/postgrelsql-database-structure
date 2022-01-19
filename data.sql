@@ -35,3 +35,12 @@ VALUES('Bob', '45');
 VALUES('Melody Pond', '77');
 VALUES('Dean Winchester', '14');
 VALUES('Jodie Whittaker', '38');
+
+
+/* Populate species table with sample data. */
+INSERT INTO species(
+	name
+)
+
+VALUES('Pokemon');
+VALUES('Digimon');
