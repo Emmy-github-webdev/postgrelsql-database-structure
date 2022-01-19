@@ -21,3 +21,17 @@ VALUES('Squirtle', DATE '1993-04-02', '3', 'false', '-12.13'),
 VALUES('Angemon', DATE '2005-06-12', '1', 'true', '-45.00'),
 VALUES('Boarmon', DATE '2005-06-07', '7', 'true', '20.40'),
 VALUES('Blossom', DATE '1998-10-13', '3', 'true', '17.00'),
+
+
+/* Populate owners table with sample data. */
+INSERT INTO owners(
+	full_name,
+	age
+)
+
+VALUES('Sam Smith', '34');
+VALUES('Jennifer Orwell', '19');
+VALUES('Bob', '45');
+VALUES('Melody Pond', '77');
+VALUES('Dean Winchester', '14');
+VALUES('Jodie Whittaker', '38');
