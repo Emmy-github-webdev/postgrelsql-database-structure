@@ -26,3 +26,7 @@ CREATE TABLE species(
 	id BIGSERIAL NOT NULL PRIMARY KEY,
 	name VARCHAR(100) NOT NULL
 )
+
+/* Update animal table add species as forign key. */
+ALTER TABLE animals 
+ADD COLUMN species_id BIGINT REFERENCES species (id);
