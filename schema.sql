@@ -13,3 +13,24 @@ CREATE TABLE animals(
 
 ALTER TABLE animals 
 ADD COLUMN species VARCHAR(100);
+
+/* Create owners table. */
+CREATE TABLE owners(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	full_name VARCHAR(100) NOT NULL,
+	age INTEGER NOT NULL
+)
+
+/* Create species table. */
+CREATE TABLE species(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+)
+
+/* Update animal table add species as forign key. */
+ALTER TABLE animals 
+ADD COLUMN species_id BIGINT REFERENCES species (id);
+
+/* Update animal table add owner as forign key. */
+ALTER TABLE animals 
+ADD COLUMN owner_id BIGINT REFERENCES owners (id)

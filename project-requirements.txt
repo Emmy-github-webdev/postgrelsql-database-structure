@@ -1,0 +1,42 @@
+Project requirements
+•	Create a table named owners with the following columns:
+o	id: integer (set it as autoincremented PRIMARY KEY)
+o	full_name: string
+o	age: integer
+•	Create a table named species with the following columns:
+o	id: integer (set it as autoincremented PRIMARY KEY)
+o	name: string
+•	Modify animals table:
+o	Make sure that id is set as autoincremented PRIMARY KEY
+o	Remove column species
+o	Add column species_id which is a foreign key referencing species table
+o	Add column owner_id which is a foreign key referencing the owners table
+•	Remember all this goes in schema.sql.
+•	Insert the following data into the owners table:
+o	Sam Smith 34 years old.
+o	Jennifer Orwell 19 years old.
+o	Bob 45 years old.
+o	Melody Pond 77 years old.
+o	Dean Winchester 14 years old.
+o	Jodie Whittaker 38 years old.
+•	Insert the following data into the species table:
+o	Pokemon
+o	Digimon
+•	Modify your inserted animals so it includes the species_id value:
+o	If the name ends in "mon" it will be Digimon
+o	All other animals are Pokemon
+•	Modify your inserted animals to include owner information (owner_id):
+o	Sam Smith owns Agumon.
+o	Jennifer Orwell owns Gabumon and Pikachu.
+o	Bob owns Devimon and Plantmon.
+o	Melody Pond owns Charmander, Squirtle, and Blossom.
+o	Dean Winchester owns Angemon and Boarmon.
+•	Remember these insertions and modifications happen in data.sql.
+•	Write queries (using JOIN) to answer the following questions:
+o	What animals belong to Melody Pond?
+o	List of all animals that are pokemon (their type is Pokemon).
+o	List all owners and their animals, remember to include those that don't own any animal.
+o	How many animals are there per species?
+o	List all Digimon owned by Jennifer Orwell.
+o	List all animals owned by Dean Winchester that haven't tried to escape.
+o	Who owns the most animals?

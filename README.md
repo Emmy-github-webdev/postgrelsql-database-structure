@@ -1,4 +1,4 @@
-# vet_clinic Database
+# Vet Clinic Database
 
 > This is a vet clinic database design
 
