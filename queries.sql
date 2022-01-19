@@ -37,3 +37,4 @@ SELECT AVG( escape_attempts) FROM animals WHERE species = 'digimon' AND date_of_
 SELECT AVG( escape_attempts) FROM animals WHERE species = 'pokemon' AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 
 
+SELECT name FROM animals WHERE animals.owner_id = 4;
