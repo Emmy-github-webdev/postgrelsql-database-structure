@@ -30,3 +30,7 @@ CREATE TABLE species(
 /* Update animal table add species as forign key. */
 ALTER TABLE animals 
 ADD COLUMN species_id BIGINT REFERENCES species (id);
+
+/* Update animal table add owner as forign key. */
+ALTER TABLE animals 
+ADD COLUMN owner_id BIGINT REFERENCES owners (id)
