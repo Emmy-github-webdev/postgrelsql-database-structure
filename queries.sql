@@ -35,3 +35,15 @@ SELECT MIN( weight_kg) FROM animals WHERE species = 'pokemon';
 SELECT MAX( weight_kg) FROM animals WHERE species = 'pokemon';
 SELECT AVG( escape_attempts) FROM animals WHERE species = 'digimon' AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
 SELECT AVG( escape_attempts) FROM animals WHERE species = 'pokemon' AND date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
+
+
+
+/*Queries, update species_id column of animals table.*/
+UPDATE animals 
+SET species_id = 2
+WHERE name LIKE '%mon';
+
+
+UPDATE animals 
+SET species_id = 1
+WHERE name NOT LIKE '%mon';
