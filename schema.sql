@@ -20,3 +20,9 @@ CREATE TABLE owners(
 	full_name VARCHAR(100) NOT NULL,
 	age INTEGER NOT NULL
 )
+
+/* Create species table. */
+CREATE TABLE species(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+)
