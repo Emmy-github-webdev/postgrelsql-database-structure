@@ -91,3 +91,14 @@ VALUES('Vet William Tatcher', '45', DATE '2000-04-23');
 VALUES('Vet Maisy Smith', '26', DATE '2019-01-17');
 VALUES('Vet Stephanie Mendez', '64', DATE '1981-05-04');
 VALUES('Vet Jack Harkness', '38', DATE '2008-06-08');
+
+
+INSERT INTO specializations(
+	species_id,
+	vets_id
+)
+
+VALUES(1, 1);
+VALUES(1, 4);
+VALUES(2, 4);
+VALUES(2, 3);
