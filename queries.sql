@@ -96,3 +96,9 @@ HAVING COUNT (*) = (SELECT MAX (visits)
 FROM (SELECT name, COUNT (*) AS visits
     FROM animals JOIN visits ON animals.id = visits.animals_id
     GROUP BY animals.name) animals);
+
+
+SELECT animals.name, visits.date_of_visit
+FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id
+WHERE vets.name = 'Vet Maisy Smith'
+ORDER BY visits.date_of_visit LIMIT 1;
