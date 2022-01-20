@@ -63,3 +63,13 @@ SELECT full_name, COUNT (full_name) AS number_of_animals
 from owners JOIN animals ON animals.owner_id = owners.id
 GROUP BY owners.full_name
 ORDER BY number_of_animals DESC LIMIT 1;
+
+
+/*Many to many relationship*/
+
+SELECT vets.name, animals
+.name, visits.date_of_visit FROM animals JOIN visits ON animals.id = animals_id JOIN vets ON vets.id = visits.vets_id WHERE vets_id =
+(SELECT id
+FROM vets
+WHERE name = 'Vet William Tatcher')
+ORDER BY visits.date_of_visit DESC LIMIT 1;
