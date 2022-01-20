@@ -43,3 +43,10 @@ CREATE TABLE vets (
 	age INTEGER NOT NULL,
 	date_of_graduation DATE NOT NULL
 )
+
+
+CREATE TABLE specializations (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	species_id BIGINT REFERENCES species (id),
+	vets_id BIGINT REFERENCES vets (id)
+)
