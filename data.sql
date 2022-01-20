@@ -77,3 +77,17 @@ WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
 UPDATE animals 
 SET owner_id = 5
 WHERE name = 'Angemon' OR name = 'Boarmon';
+
+
+/*Many to Many table relationship*/
+
+INSERT INTO vets(
+	name,
+	age,
+	date_of_graduation
+)
+
+VALUES('Vet William Tatcher', '45', DATE '2000-04-23');
+VALUES('Vet Maisy Smith', '26', DATE '2019-01-17');
+VALUES('Vet Stephanie Mendez', '64', DATE '1981-05-04');
+VALUES('Vet Jack Harkness', '38', DATE '2008-06-08');
