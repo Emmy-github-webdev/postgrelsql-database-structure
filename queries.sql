@@ -105,3 +105,9 @@ ORDER BY visits.date_of_visit LIMIT 1;
 
 SELECT animals.name, animals.date_of_birth, animals.escape_attempts, animals.neutered, animals.weight_kg, vets.name
 , age, date_of_graduation, date_of_visit FROM animals JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id ORDER BY visits.date_of_visit DESC LIMIT 1;
+
+
+SELECT vets.name, COUNT (*)
+FROM vets JOIN visits ON vets.id = visits.vets_id JOIN specializations ON vets.id = specializations.vets_id
+WHERE specializations.species_id is NULL
+GROUP BY vets.name;
