@@ -80,3 +80,10 @@ SELECT COUNT(animals.name) FROM animals JOIN visits ON animals.id = animals_id J
 
 SELECT vets.name, species.name
 FROM vets FULL OUTER JOIN specializations ON vets.id = specializations.vets_id FULL OUTER JOIN species ON species.id = specializations.species_id;
+
+
+SELECT vets.name, animals
+.name, visits.date_of_visit FROM animals JOIN visits ON animals.id = animals_id JOIN vets ON vets.id = visits.vets_id WHERE vets_id =
+(SELECT id
+FROM vets
+WHERE name = 'Vet Stephanie Mendez' AND visits.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30');
