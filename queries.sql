@@ -87,3 +87,12 @@ SELECT vets.name, animals
 (SELECT id
 FROM vets
 WHERE name = 'Vet Stephanie Mendez' AND visits.date_of_visit BETWEEN '2020-04-01' AND '2020-08-30');
+
+
+SELECT animals.name, COUNT (*) AS visits
+FROM animals JOIN visits ON animals.id = visits.animals_id
+GROUP BY animals.name
+HAVING COUNT (*) = (SELECT MAX (visits)
+FROM (SELECT name, COUNT (*) AS visits
+    FROM animals JOIN visits ON animals.id = visits.animals_id
+    GROUP BY animals.name) animals);
