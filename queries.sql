@@ -111,3 +111,10 @@ SELECT vets.name, COUNT (*)
 FROM vets JOIN visits ON vets.id = visits.vets_id JOIN specializations ON vets.id = specializations.vets_id
 WHERE specializations.species_id is NULL
 GROUP BY vets.name;
+
+
+SELECT COUNT (*), species.name
+FROM animals JOIN species ON animals.species_id = species.id JOIN visits ON animals.id = visits.animals_id JOIN vets ON vets.id = visits.vets_id
+WHERE vets.name = 'Vet Maisy Smith'
+GROUP BY species.name
+LIMIT 1;
