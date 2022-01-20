@@ -77,3 +77,6 @@ ORDER BY visits.date_of_visit DESC LIMIT 1;
 
 SELECT COUNT(animals.name) FROM animals JOIN visits ON animals.id = animals_id JOIN vets ON vets.id = visits.vets_id WHERE vets_id =(SELECT id
  FROM vets WHERE name = 'Vet Stephanie Mendez');
+
+SELECT vets.name, species.name
+FROM vets FULL OUTER JOIN specializations ON vets.id = specializations.vets_id FULL OUTER JOIN species ON species.id = specializations.species_id;
