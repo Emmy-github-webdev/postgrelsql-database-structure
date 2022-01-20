@@ -50,3 +50,10 @@ CREATE TABLE specializations (
 	species_id BIGINT REFERENCES species (id),
 	vets_id BIGINT REFERENCES vets (id)
 )
+
+CREATE TABLE visits (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	animals_id BIGINT REFERENCES animals (id),
+	vets_id BIGINT REFERENCES vets (id),
+	date_of_visit DATE NOT NULL
+)
