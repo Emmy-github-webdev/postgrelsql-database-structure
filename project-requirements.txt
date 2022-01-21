@@ -1,38 +1,38 @@
 Project requirements
-•	Create a table named owners with the following columns:
+ï¿½	Create a table named owners with the following columns:
 o	id: integer (set it as autoincremented PRIMARY KEY)
 o	full_name: string
 o	age: integer
-•	Create a table named species with the following columns:
+ï¿½	Create a table named species with the following columns:
 o	id: integer (set it as autoincremented PRIMARY KEY)
 o	name: string
-•	Modify animals table:
+ï¿½	Modify animals table:
 o	Make sure that id is set as autoincremented PRIMARY KEY
 o	Remove column species
 o	Add column species_id which is a foreign key referencing species table
 o	Add column owner_id which is a foreign key referencing the owners table
-•	Remember all this goes in schema.sql.
-•	Insert the following data into the owners table:
+ï¿½	Remember all this goes in schema.sql.
+ï¿½	Insert the following data into the owners table:
 o	Sam Smith 34 years old.
 o	Jennifer Orwell 19 years old.
 o	Bob 45 years old.
 o	Melody Pond 77 years old.
 o	Dean Winchester 14 years old.
 o	Jodie Whittaker 38 years old.
-•	Insert the following data into the species table:
+ï¿½	Insert the following data into the species table:
 o	Pokemon
 o	Digimon
-•	Modify your inserted animals so it includes the species_id value:
+ï¿½	Modify your inserted animals so it includes the species_id value:
 o	If the name ends in "mon" it will be Digimon
 o	All other animals are Pokemon
-•	Modify your inserted animals to include owner information (owner_id):
+ï¿½	Modify your inserted animals to include owner information (owner_id):
 o	Sam Smith owns Agumon.
 o	Jennifer Orwell owns Gabumon and Pikachu.
 o	Bob owns Devimon and Plantmon.
 o	Melody Pond owns Charmander, Squirtle, and Blossom.
 o	Dean Winchester owns Angemon and Boarmon.
-•	Remember these insertions and modifications happen in data.sql.
-•	Write queries (using JOIN) to answer the following questions:
+ï¿½	Remember these insertions and modifications happen in data.sql.
+ï¿½	Write queries (using JOIN) to answer the following questions:
 o	What animals belong to Melody Pond?
 o	List of all animals that are pokemon (their type is Pokemon).
 o	List all owners and their animals, remember to include those that don't own any animal.
@@ -40,3 +40,54 @@ o	How many animals are there per species?
 o	List all Digimon owned by Jennifer Orwell.
 o	List all animals owned by Dean Winchester that haven't tried to escape.
 o	Who owns the most animals?
+
+Relationship
+
+Project requirements
+Create a table named vets with the following columns:
+id: integer (set it as autoincremented PRIMARY KEY)
+name: string
+age: integer
+date_of_graduation: date
+There is a many-to-many relationship between the tables species and vets: a vet can specialize in multiple species, and a species can have multiple vets specialized in it. Create a "join table" called specializations to handle this relationship.
+There is a many-to-many relationship between the tables animals and vets: an animal can visit multiple vets and one vet can be visited by multiple animals. Create a "join table" called visits to handle this relationship, it should also keep track of the date of the visit.
+Insert the following data for vets:
+Vet William Tatcher is 45 years old and graduated Apr 23rd, 2000.
+Vet Maisy Smith is 26 years old and graduated Jan 17th, 2019.
+Vet Stephanie Mendez is 64 years old and graduated May 4th, 1981.
+Vet Jack Harkness is 38 years old and graduated Jun 8th, 2008.
+Insert the following data for specialties:
+Vet William Tatcher is specialized in Pokemon.
+Vet Stephanie Mendez is specialized in Digimon and Pokemon.
+Vet Jack Harkness is specialized in Digimon.
+Insert the following data for visits:
+Agumon visited William Tatcher on May 24th, 2020.
+Agumon visited Stephanie Mendez on Jul 22th, 2020.
+Gabumon visited Jack Harkness on Feb 2nd, 2021.
+Pikachu visited Maisy Smith on Jan 5th, 2020.
+Pikachu visited Maisy Smith on Mar 8th, 2020.
+Pikachu visited Maisy Smith on May 14th, 2020.
+Devimon visited Stephanie Mendez on May 4th, 2021.
+Charmander visited Jack Harkness on Feb 24th, 2021.
+Plantmon visited Maisy Smith on Dec 21st, 2019.
+Plantmon visited William Tatcher on Aug 10th, 2020.
+Plantmon visited Maisy Smith on Apr 7th, 2021.
+Squirtle visited Stephanie Mendez on Sep 29th, 2019.
+Angemon visited Jack Harkness on Oct 3rd, 2020.
+Angemon visited Jack Harkness on Nov 4th, 2020.
+Boarmon visited Maisy Smith on Jan 24th, 2019.
+Boarmon visited Maisy Smith on May 15th, 2019.
+Boarmon visited Maisy Smith on Feb 27th, 2020.
+Boarmon visited Maisy Smith on Aug 3rd, 2020.
+Blossom visited Stephanie Mendez on May 24th, 2020.
+Blossom visited William Tatcher on Jan 11th, 2021.
+Write queries to answer the following:
+Who was the last animal seen by William Tatcher?
+How many different animals did Stephanie Mendez see?
+List all vets and their specialties, including vets with no specialties.
+List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+What animal has the most visits to vets?
+Who was Maisy Smith's first visit?
+Details for most recent visit: animal information, vet information, and date of visit.
+How many visits were with a vet that did not specialize in that animal's species?
+What specialty should Maisy Smith consider getting? Look for the species she gets the most.
