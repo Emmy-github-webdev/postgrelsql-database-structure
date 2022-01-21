@@ -77,3 +77,56 @@ WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
 UPDATE animals 
 SET owner_id = 5
 WHERE name = 'Angemon' OR name = 'Boarmon';
+
+
+/*Many to Many table relationship*/
+
+INSERT INTO vets(
+	name,
+	age,
+	date_of_graduation
+)
+
+VALUES('Vet William Tatcher', '45', DATE '2000-04-23');
+VALUES('Vet Maisy Smith', '26', DATE '2019-01-17');
+VALUES('Vet Stephanie Mendez', '64', DATE '1981-05-04');
+VALUES('Vet Jack Harkness', '38', DATE '2008-06-08');
+
+
+INSERT INTO specializations(
+	species_id,
+	vets_id
+)
+
+VALUES(1, 1);
+VALUES(1, 4);
+VALUES(2, 4);
+VALUES(2, 3);
+
+
+INSERT INTO visits(
+	animals_id,
+	vets_id,
+	date_of_visit
+)
+
+VALUES(1, 1, DATE '2020-05-24');
+VALUES(1, 4, DATE '2020-07-22');
+VALUES(2, 3, DATE '2021-02-02');
+VALUES(3, 2, DATE '2020-01-05');
+VALUES(3, 2, DATE '2020-03-08');
+VALUES(3, 2, DATE '2020-05-14');
+VALUES(4, 4, DATE '2021-05-04');
+VALUES(9, 3, DATE '2021-02-24');
+VALUES(5, 2, DATE '2019-12-21');
+VALUES(5, 1, DATE '2020-08-10');
+VALUES(5, 2, DATE '2021-07-07');
+VALUES(6, 4, DATE '2019-09-28');
+VALUES(10, 3, DATE '2020-10-03');
+VALUES(10, 3, DATE '2020-11-04');
+VALUES(7, 2, DATE '2019-01-24');
+VALUES(7, 2, DATE '2019-05-15');
+VALUES(7, 2, DATE '2020-02-27');
+VALUES(7, 2, DATE '2020-08-03');
+VALUES(8, 4, DATE '2020-05-24');
+VALUES(8, 1, DATE '2021-01-11');
