@@ -34,3 +34,26 @@ ADD COLUMN species_id BIGINT REFERENCES species (id);
 /* Update animal table add owner as forign key. */
 ALTER TABLE animals 
 ADD COLUMN owner_id BIGINT REFERENCES owners (id)
+
+/* Many-to-many relationship table. */
+
+CREATE TABLE vets (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	age INTEGER NOT NULL,
+	date_of_graduation DATE NOT NULL
+)
+
+
+CREATE TABLE specializations (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	species_id BIGINT REFERENCES species (id),
+	vets_id BIGINT REFERENCES vets (id)
+)
+
+CREATE TABLE visits (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	animals_id BIGINT REFERENCES animals (id),
+	vets_id BIGINT REFERENCES vets (id),
+	date_of_visit DATE NOT NULL
+)
