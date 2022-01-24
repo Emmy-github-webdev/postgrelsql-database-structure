@@ -120,22 +120,6 @@ GROUP BY species.name
 LIMIT 1;
 
 /* Database performance audit*/
--- Queries before optimization
-
--- 1
 SELECT COUNT(*) FROM visits where animal_id = 4;
--- 2
 SELECT * FROM visits where vet_id = 2;
--- 3
 SELECT * FROM owners where email = 'owner_18327@mail.com';
-
--- Queries after optimization
-
--- 1
-CREATE INDEX animals_id_asc ON visits(animal_id ASC);
-SELECT COUNT(*) FROM visits where animal_id = 4;
--- 2
--- Not implemented yet.
--- 3
-SELECT * FROM owners where id = 18327;
-
