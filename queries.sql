@@ -118,3 +118,8 @@ FROM animals JOIN species ON animals.species_id = species.id JOIN visits ON anim
 WHERE vets.name = 'Vet Maisy Smith'
 GROUP BY species.name
 LIMIT 1;
+
+/* Database performance audit*/
+SELECT COUNT(*) FROM visits where animals_id = 4;
+SELECT * FROM visits where vets_id = 2;
+SELECT * FROM owners where email = 'owner_18327@mail.com';
