@@ -2,6 +2,7 @@
 
 > This is a vet clinic database design
 
+![Vet Clinic Database Schema](images/Relationship-entity.png)
 
 ## Getting Started
 
